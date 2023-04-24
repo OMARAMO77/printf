@@ -10,6 +10,6 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int _printint(int n);
 int _puts(char *s);
-int _printbin(unsigned int n);
+int _printbinary(unsigned int x);
 
 #endif

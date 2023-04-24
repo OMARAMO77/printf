@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-* _printf - produces output according to a format
-* @format: a character string
-*
-* Return: returns the number of characters printed
-*/
+ * _printf - produces output according to a format
+ * @format: a character string
+ *
+ * Return: returns the number of characters printed
+ */
 
 int _printf(const char *format, ...)
 {
@@ -33,6 +33,9 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i':
 					counter += _printint(va_arg(args, int));
+					break;
+				case 'b':
+					counter += _printbinary(va_arg(args, unsigned int));
 					break;
 				default:
 					counter += _putchar('%');

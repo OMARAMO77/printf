@@ -7,11 +7,11 @@
 * Return: returns the number of characters printed
 */
 
-int _printf(const char *format, ...) 
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int counter = 0;
-	
+
 	va_start(args, format);
 
 	while (*format)

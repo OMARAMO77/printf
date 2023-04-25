@@ -2,9 +2,10 @@
 
 /**
  * _printchar - prints a char.
- * @val: arguments.
+ * @H: arguments.
  * Return: 1.
  */
+
 int _printchar(va_list H)
 {
 	_putchar(va_arg(H, int));

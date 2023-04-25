@@ -37,6 +37,18 @@ int _printf(const char *format, ...)
 				case 'b':
 					counter += _printbinary(va_arg(args, unsigned int));
 					break;
+				case 'x':
+					counter += _printhex(va_arg(args, unsigned int));
+					break;
+				case 'X':
+					counter += _printHEXA(va_arg(args, unsigned int));
+					break;
+				case 'o':
+					counter += _printoct(va_arg(args, unsigned int));
+					break;
+				case 'u':
+					counter += _printuns(va_arg(args, unsigned int));
+					break;
 				default:
 					counter += _putchar('%');
 					counter += _putchar(*format);
@@ -48,7 +60,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(args);
 	return (counter);
 }

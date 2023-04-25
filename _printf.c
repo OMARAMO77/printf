@@ -1,70 +1,44 @@
 #include "main.h"
-
 /**
- * _printf - produces output according to a format
- * @format: a character string
+ * _printf - selects the correct function to print
+ * @format: identifier to look for
  *
- * Return: returns the number of characters printed
+ * Return: the length of the printed string
  */
-
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int counter = 0;
+	convert_match m[] = {
+		{"%s", _puts}, {"%c", _printchar}, {"%%", _printpercent},
+		{"%i", _printint}, {"%d", _printint},
+		{"%b", _printbinary}, {"%u", _printuns},
+		{"%o", _printoct}, {"%x", _printhex}, {"%X", _printHEXA},
+	};
 
-	va_start(args, format);
+	va_list H;
+	int i = 0, j, counter = 0;
 
-	if (format == NULL)
-	{
+	va_start(H, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	}
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			switch (*format)
-			{
-				case 'c':
-					counter += _putchar(va_arg(args, int));
-					break;
-				case 's':
-					counter += _puts(va_arg(args, char *));
-					break;
-				case '%':
-					counter += _putchar('%');
-					break;
-				case 'd':
-				case 'i':
-					counter += _printint(va_arg(args, int));
-					break;
-				case 'b':
-					counter += _printbinary(va_arg(args, unsigned int));
-					break;
-				case 'x':
-					counter += _printhex(va_arg(args, unsigned int));
-					break;
-				case 'X':
-					counter += _printHEXA(va_arg(args, unsigned int));
-					break;
-				case 'o':
-					counter += _printoct(va_arg(args, unsigned int));
-					break;
-				case 'u':
-					counter += _printuns(va_arg(args, unsigned int));
-					break;
-				default:
-					counter += _putchar('%');
-					counter += _putchar(*format);
-			}
-		}
-		else
-		{
-			counter += _putchar(*format);
-		}
-		format++;
-	}
 
-	va_end(args);
+loop:
+	while (format[i])
+	{
+		j = 0;
+		while (j <= 9)
+		{
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
+			{
+				counter += m[j].f(H);
+				i = i + 2;
+				goto loop;
+			}
+			j++;
+		}
+		_putchar(format[i]);
+		counter++;
+		i++;
+	}
+	va_end(H);
 	return (counter);
 }

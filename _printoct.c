@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-* _printoct - converts an unsigned int into hexadecimal number
-* @o: a decimal number
+* _printoct - converts an unsigned int to octal
+* @H: arguments.
 *
 * Return: returns the number of characters printed
 */

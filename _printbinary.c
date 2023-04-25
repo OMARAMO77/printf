@@ -1,30 +1,34 @@
 #include "main.h"
 
 /**
-* _printbinary - converts an unsigned int into hexadecimal number
-* @H: arguments.
-*
-* Return: returns the number of characters printed
-*/
-
+ * _printbinary - coverts unsigned integer to binary
+ * @H: arguments
+ * Return: value of printed numbers
+ */
 int _printbinary(va_list H)
 {
-	char bin[1024];
-	int i = 0;
-	int counter;
-	int n;
-	unsigned int b = va_arg(H, unsigned int);
+	int c = 0;
+	int counter = 0;
+	int i, a = 1, b;
+	unsigned int n = va_arg(H, unsigned int);
+	unsigned int p;
 
-	while (b)
+	for (i = 0; i < 32; i++)
 	{
-		n = b % 2;
-		bin[i] = '0' + n;
-		b /= 2;
-		i++;
+		p = ((a << (31 - i)) & n);
+		if (p >> (31 - i))
+			c = 1;
+		if (c)
+		{
+			b = p >> (31 - i);
+			_putchar(b + 48);
+			counter++;
+		}
 	}
-	while (i--)
+	if (counter == 0)
 	{
-		counter += _putchar(bin[i]);
+		counter++;
+		_putchar('0');
 	}
 	return (counter);
 }

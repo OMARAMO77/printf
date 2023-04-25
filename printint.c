@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _printint - prints integer
- * @H: arguments
+ * @H: argument
  * Return: number of characters printed
  */
 int _printint(va_list H)

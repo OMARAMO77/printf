@@ -3,12 +3,18 @@ TEAM COLLABOLATION PROJECT PRINTF
 The collaborative team is tasked with creating a simpified version of "printf" function which can handle a limited set of formatting options.
 
 ENVIROMENT
-* c programming Language.
+*c programming Language.
 *Editor: Vi, Emacs or Ubuntu 20.04
 *Compiler: gcc 9.3.0
 *Wall -Werror -Wextra -pedantic -Std=gnu89
 *Style guidelines: Betty style
 
--Captures the secrets of printf in a source code.
--Build up the prototype by calling additional prototype.
--All prototype are in our main.h file.
+PROJECT SPECIFICATION
+
+*Not allowed to use global variables
+*No more than five functions per file
+*All files end with a newline.
+
+SUPPORTING FILES.
+*main.h: defines all prototypes function as the header for prototypes.
+**.c prototype files that mimics certain function to be used with the printf-project.

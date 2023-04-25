@@ -7,12 +7,14 @@
 * Return: returns the number of characters printed
 */
 
-int _printhex(unsigned int x)
+int _printhex(va_list H)
 {
 	char hex[8];
 	int i = 0;
 	int counter = 0;
 	int n;
+	unsigned int x = va_arg(H, unsigned int);
+	
 
 	while (x)
 	{

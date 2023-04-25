@@ -2,10 +2,11 @@
 
 /**
 * _printuns - print an unsigned number
-* @u: a decimal number
+* @H: arguments.
 *
 * Return: returns the number of characters printed
 */
+
 int _printuns(va_list H)
 {
 	char dec[12];

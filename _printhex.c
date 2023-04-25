@@ -2,7 +2,7 @@
 
 /**
 * _printhex - converts an unsigned int to an hexadecimal number
-* @H: arguments.
+* @H: argument.
 *
 * Return: returns the number of characters printed
 */

@@ -6,12 +6,13 @@
 *
 * Return: returns the number of characters printed
 */
-int _printuns(unsigned int u)
+int _printuns(va_list H)
 {
 	char dec[12];
 	int i = 0;
 	int n;
 	int counter;
+	unsigned int u = va_arg(H, unsigned int);
 
 	while (u)
 	{

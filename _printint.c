@@ -1,26 +1,44 @@
 #include "main.h"
-
 /**
-* _printint - prints a number
-* @n: a number
-*
-* Return: returns the number printed
-*/
-
-int _printint(int n)
+ * _printint - prints integer
+ * @args: argument to print
+ * Return: number of characters printed
+ */
+int _printint(va_list H)
 {
-	int counter = 0;
+	int n = va_arg(H, int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	if (n < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
 		_putchar('-');
-		counter++;
+		num = -num;
 		n = -n;
+		last = -last;
+		i++;
 	}
-	if (n > 9)
+	if (num > 0)
 	{
-		counter += _printint(n / 10);
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
 	}
-	_putchar(n % 10 + '0');
-	return (counter + 1);
+	_putchar(last + '0');
+
+	return (i);
 }

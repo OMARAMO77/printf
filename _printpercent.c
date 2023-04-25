@@ -4,6 +4,7 @@
  * _printpercent - prints the character %.
  * Return: 1.
  */
+
 int _printpercent(void)
 {
 	_putchar('%');

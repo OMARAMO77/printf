@@ -2,7 +2,7 @@
 
 /**
  * _printbinary - coverts unsigned integer to binary
- * @H: arguments
+ * @H: argument
  * Return: value of printed numbers
  */
 int _printbinary(va_list H)

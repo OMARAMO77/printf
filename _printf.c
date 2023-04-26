@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - produces output according to a format
+ * _printf - produce output according to a format
  * @format: identifier
  *
  * Return: counter

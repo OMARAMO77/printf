@@ -18,3 +18,7 @@ PROJECT SPECIFICATION
 SUPPORTING FILES.
 *main.h: defines all prototypes function as the header for prototypes.
 **.c prototype files that mimics certain function to be used with the printf-project.
+
+GOAL
+*Test collaborative skills.
+

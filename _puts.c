@@ -4,7 +4,7 @@
  * _puts - prints a string
  * @H: a string
  *
- * Return: return the number printed
+ * Return: returns the number printed
  */
 
 int _puts(va_list H)
@@ -12,6 +12,9 @@ int _puts(va_list H)
 	char buffer[1024];
 	int counter = 0, ind = 0;
 	char *s = va_arg(H, char *);
+
+	if (s == NULL)
+		s = "(null)";
 
 	while (*s)
 	{

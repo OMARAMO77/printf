@@ -11,7 +11,7 @@ int _printoct(va_list H)
 {
 	char oct[12];
 	int i = 0;
-	int counter;
+	int counter = 0;
 	int n;
 	unsigned int o = va_arg(H, unsigned int);
 

@@ -13,7 +13,7 @@ int _printhex(va_list H)
 	int i = 0;
 	int counter = 0;
 	int n;
-	unsigned int x = va_arg(H, unsigned int);
+	unsigned long int x = va_arg(H, unsigned long int);
 
 	while (x)
 	{

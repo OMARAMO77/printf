@@ -3,7 +3,7 @@
 /**
  * _printbinary - coverts unsigned integer to binary
  * @H: argument
- * Return: value of printed numbers
+ * Return: value of printed number
  */
 int _printbinary(va_list H)
 {

@@ -13,7 +13,7 @@ int _printuns(va_list H)
 	int i = 0;
 	int n;
 	int counter = 0;
-	long int u = va_arg(H, long int);
+	unsigned long int u = va_arg(H, unsigned long int);
 
 	while (u)
 	{

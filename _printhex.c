@@ -2,7 +2,7 @@
 
 /**
 * _printhex - converts an unsigned int to an hexadecimal number
-* @H: argument.
+* @H: arguments.
 *
 * Return: returns the number of characters printed
 */
@@ -33,5 +33,5 @@ int _printhex(va_list H)
 	{
 		counter += _putchar(hex[i]);
 	}
-	return (counter);
+	return (counter + 1);
 }

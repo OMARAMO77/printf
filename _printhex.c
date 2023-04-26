@@ -2,7 +2,7 @@
 
 /**
 * _printhex - prints an hexadcimal number
-* @H: arguments.
+* @H: argume.:.:
 * Return: counter
 */
 int _printhex(va_list H)

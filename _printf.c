@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
- * _printf - selects the correct function to print
- * @format: identifier to look for
+ * _printf - produces output according to a format
+ * @format: identifier
  *
- * Return: the length of the printed string
+ * Return: counter
  */
+
 int _printf(const char *format, ...)
 {
 	convert_match m[] = {
@@ -12,6 +14,7 @@ int _printf(const char *format, ...)
 		{"%i", _printint}, {"%d", _printint},
 		{"%b", _printbinary}, {"%u", _printuns},
 		{"%o", _printoct}, {"%x", _printhex}, {"%X", _printHEXA},
+		{"%S", _printnonpr}, {"%p", _printaddr}
 	};
 
 	va_list H;
@@ -25,7 +28,7 @@ loop:
 	while (format[i])
 	{
 		j = 0;
-		while (j <= 9)
+		while (j <= 11)
 		{
 			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{

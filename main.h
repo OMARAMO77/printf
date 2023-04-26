@@ -1,14 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define BUFFER_SIZE 1024
-
 /**
  * struct format - match the conversion specifiers for the printf function
  * @id: type char pointer of the specifier
  * @f: type pointer to function for the conversion specifier
  */
-
 typedef struct format
 {
 	char *id;
@@ -34,4 +31,9 @@ int _printoct(va_list H);
 int _printuns(va_list H);
 int _printchar(va_list H);
 int _printpercent(void);
+int printhexa(unsigned int n);
+int printhex(unsigned long int n);
+int _printaddr(va_list H);
+int _printnonpr(va_list H);
+
 #endif

@@ -2,7 +2,7 @@
 
 /**
  * _printaddr - print an hexadecimal number
- * @H: arguments
+ * @H: argument.
  * Return: counter
  */
 int _printaddr(va_list H)

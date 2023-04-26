@@ -4,7 +4,7 @@
  * _puts - prints a string
  * @H: a string
  *
- * Return: returns the number printed
+ * Return: return the number printed
  */
 
 int _puts(va_list H)

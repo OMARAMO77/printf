@@ -2,7 +2,7 @@
 /**
  * _printint - prints integer
  * @H: argument
- * Return: number of all characters printed
+ * Return: number of all characters
  */
 int _printint(va_list H)
 {

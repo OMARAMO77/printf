@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printaddr - prints an hexadecimal number
+ * _printaddr - print an hexadecimal number
  * @H: arguments
  * Return: counter
  */

@@ -1,37 +1,36 @@
 #include "main.h"
 
 /**
-* _printhex - converts an unsigned int to an hexadecimal number
+* _printhex - prints an hexadcimal number
 * @H: arguments.
-*
-* Return: returns the number of characters printed
+* Return: counter
 */
-
 int _printhex(va_list H)
 {
-	char hex[8];
-	int i = 0;
-	int counter = 0;
-	int n;
-	unsigned long int x = va_arg(H, unsigned long int);
+	int i, counter = 0;
+	int *arr;
+	unsigned long int n = va_arg(H, unsigned long int);
+	unsigned long int aux = n;
 
-	while (x)
+	while (n / 16 != 0)
 	{
-		n = x % 16;
-		if (n < 10)
-		{
-			hex[i] = '0' + n;
-		}
-		else
-		{
-			hex[i] = 'a' + n - 10;
-		}
-		x /= 16;
-		i++;
+		n /= 16;
+		counter++;
 	}
-	while (i--)
+	counter++;
+	arr = malloc(counter * sizeof(long int));
+
+	for (i = 0; i < counter; i++)
 	{
-		counter += _putchar(hex[i]);
+		arr[i] = aux % 16;
+		aux /= 16;
 	}
-	return (counter + 1);
+	for (i = counter - 1; i >= 0; i--)
+	{
+		if (arr[i] > 9)
+			arr[i] = arr[i] + 39;
+		_putchar(arr[i] + '0');
+	}
+	free(arr);
+	return (counter);
 }

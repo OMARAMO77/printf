@@ -12,7 +12,7 @@ int _printHEXA(va_list H)
 	int i = 0;
 	int counter = 0;
 	int n;
-	unsigned int X = va_arg(H, unsigned int);
+	unsigned long int X = va_arg(H, unsigned long int);
 
 	while (X)
 	{
@@ -32,5 +32,5 @@ int _printHEXA(va_list H)
 	{
 		counter += _putchar(hex[i]);
 	}
-	return (counter + 1);
+	return (counter);
 }

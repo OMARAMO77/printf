@@ -2,7 +2,7 @@
 
 /**
 * _printuns - print an unsigned number
-* @H: argument.
+* @H: arguments.
 *
 * Return: returns the number of characters printed
 */
@@ -12,7 +12,7 @@ int _printuns(va_list H)
 	char dec[12];
 	int i = 0;
 	int n;
-	int counter;
+	int counter = 0;
 	unsigned int u = va_arg(H, unsigned int);
 
 	while (u)

@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _printnonpr - print non printable characters
+ * _printnonpr - print non-printable characters
  * @H: argument.
  * Return: the length of a string.
  */

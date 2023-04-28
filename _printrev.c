@@ -2,8 +2,7 @@
 
 /**
   * _printrev - Prints a string in reverse
-  * @H: arguments
-  *
+  * @H: argument.
   * Return: void
   */
 

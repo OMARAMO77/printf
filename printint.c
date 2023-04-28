@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _printint - prints integer
- * @H: argument
- * Return: number of all characters
+ * _printint - print integer.
+ * @H: argument.
+ * Return: number of all characters.
  */
 int _printint(va_list H)
 {

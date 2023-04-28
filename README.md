@@ -21,4 +21,5 @@ SUPPORTING FILES.
 
 GOAL
 *Test collaborative skills.
-*Critical Thinking 
+*Critical Thinking
+*Paired coding and debugging. 

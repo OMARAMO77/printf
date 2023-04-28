@@ -2,10 +2,8 @@
 
 /**
  * _printrot13 - prints rot3
- * @H: arguments
- *
+ * @H: argument.
  * Return: number of characters printed
- *
  */
 int _printrot13(va_list H)
 {

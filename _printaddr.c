@@ -1,31 +1,47 @@
 #include "main.h"
 
 /**
- * _printaddr - print an hexadecimal number
- * @H: argument.
+ * _printaddr - prints an address
+ * @H: arguments
  * Return: counter
  */
+
 int _printaddr(va_list H)
 {
-	void *ptr;
+	unsigned int arr[16];
+	unsigned int i, sum = 0;
+	unsigned long p, hex = 1152921504606846976;
 	char *str = "(nil)";
-	long int c;
-	int b;
-	int i;
+	int counter = 0;
 
-	ptr = va_arg(H, void*);
-	if (ptr == NULL)
+	p = va_arg(H, unsigned long);
+	if (p == 0)
 	{
-		for (i = 0; str[i] != '\0'; i++)
+		for (i = 0; str[i]; i++)
 		{
-			_putchar(str[i]);
+			counter += _putchar(str[i]);
 		}
-		return (i);
+		return (counter);
 	}
+	counter += _putchar('0');
+	counter += _putchar('x');
 
-	c = (unsigned long int)ptr;
-	_putchar('0');
-	_putchar('x');
-	b = printhex(c);
-	return (b + 2);
+	arr[0] = p / hex;
+	for (i = 1; i < 16; i++)
+	{
+		hex /= 16;
+		arr[i] = (p / hex) % 16;
+	}
+	for (i = 0; i < 16; i++)
+	{
+		sum += arr[i];
+		if (sum || i == 15)
+		{
+			if (arr[i] < 10)
+				counter += _putchar('0' + arr[i]);
+			else
+				counter += _putchar('0' + ('a' - ':') + arr[i]);
+		}
+	}
+	return (counter);
 }
